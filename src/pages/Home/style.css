@@ -1,0 +1,42 @@
+.home-container{
+    width: 99%;
+    height: 99%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.home-container p{
+    margin: 5px;
+}
+
+.home-header-info{
+    margin: 5px;
+    width: 20%;
+    height: 3%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.home-board{
+    background: linear-gradient(-45deg,#23ACD5,rgb(16, 251, 173),#23ACD5, rgb(16, 251, 173));
+    background-size: 550% 880%;
+    margin: 5px;
+    width: 50%;
+    height: 80%;
+    animation: change 30s ease-in infinite;
+}
+
+@keyframes change{
+    from{
+        background-position: 0% 0%;
+    }
+
+    to{
+        background-position: 58% 90%;
+    }
+    
+}
