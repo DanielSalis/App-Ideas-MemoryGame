@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import './style.css';
 
-class Home extends Component{
-    render(){
-        return(
+class Home extends Component {
+    render() {
+        return (
             <div className="home-container">
                 <p>Jogo da Memória</p>
                 <div className="home-header-info">
@@ -13,7 +13,22 @@ class Home extends Component{
                     <label>{'<='}</label>
                 </div>
                 <div className="home-board">
-
+                    <div className="square"></div>
+                    <div className="square"></div>
+                    <div className="square"></div>
+                    <div className="square"></div>
+                    <div className="square"></div>
+                    <div className="square"></div>
+                    <div className="square"></div>
+                    <div className="square"></div>
+                    <div className="square"></div>
+                    <div className="square"></div>
+                    <div className="square"></div>
+                    <div className="square"></div>
+                    <div className="square"></div>
+                    <div className="square"></div>
+                    <div className="square"></div>
+                    <div className="square"></div>
                 </div>
             </div>
         );

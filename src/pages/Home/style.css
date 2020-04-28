@@ -14,20 +14,36 @@
 
 .home-header-info{
     margin: 5px;
-    width: 20%;
-    height: 3%;
+    min-width: 20%;
+    min-height: 3%;
     border: 1px solid black;
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
 }
 
 .home-board{
+    border-radius: 3%;
     background: linear-gradient(-45deg,#23ACD5,rgb(16, 251, 173),#23ACD5, rgb(16, 251, 173));
-    background-size: 550% 880%;
+    background-size: 770% 880%;
     margin: 5px;
-    width: 50%;
-    height: 80%;
-    animation: change 30s ease-in infinite;
+    width: 50rem;
+    height: 50rem;
+    animation: change 60s ease-in-out infinite;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.square{
+    margin: 20px 20px;
+    width: 150px;
+    height: 150px;
+    background-color: #2e3d49;
+    border-radius: 8px;
 }
 
 @keyframes change{
@@ -36,7 +52,7 @@
     }
 
     to{
-        background-position: 58% 90%;
+        background-position: 78% 90%;
     }
     
 }
