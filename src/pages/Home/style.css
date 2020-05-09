@@ -44,6 +44,14 @@
     height: 150px;
     background-color: #2e3d49;
     border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.square-selected{
+    background-color: #fff;
 }
 
 @keyframes change{
