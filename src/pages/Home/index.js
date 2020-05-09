@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Board from './Board';
 
+import { Actions as BoardActions } from '../../store/ducks/board';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
 import './style.css';
 
 class Home extends Component {
     state = {
         minutes: 5,
         seconds: 0,
-        movimentos: 0,
     }
 
 
@@ -40,7 +43,8 @@ class Home extends Component {
 
 
     render() {
-        const { minutes, seconds, movimentos } = this.state;
+        const { minutes, seconds } = this.state;
+        const {movimentos} = this.props.board
 
         return (
             <div className="home-container">
@@ -61,4 +65,12 @@ class Home extends Component {
     }
 }
 
-export default Home;
+const mapStateToProps = state => ({
+    board: state.board
+});
+
+const mapDispatchToProps = dispatch => ({
+    BoardActions: bindActionCreators(BoardActions, dispatch)
+});
+
+export default connect(mapStateToProps,mapDispatchToProps)(Home);

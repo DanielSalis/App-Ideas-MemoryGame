@@ -85,6 +85,7 @@ class Board extends Component {
             listItems.push(
                 <Square
                     key={i}
+                    position={i}
                     id={icons[j].id}
                     shown={icons[j].shown}
                     foundPair={icons[j].foundPair}
@@ -96,22 +97,7 @@ class Board extends Component {
 
         return listItems;
     }
-
-
-    // handleClickSquare = async (e) => {
-    //     if (nodeName === 'div') {
-    //         e.classList.toggle('square-selected');
-    //         div = e;
-    //     } else if (nodeName === 'svg') {
-    //         e.parentNode.classList.toggle('square-selected');
-    //         div = e.parentNode;
-    //     }
-    //     else if (nodeName === 'path' || nodeName === 'polyline' || nodeName === 'circle' || nodeName === 'line') {
-    //         e.parentNode.parentNode.classList.toggle('square-selected');
-    //         div = e.parentNode.parentNode;
-    //     }
-    // }
-
+    
     render() {
         return (
             <div className="home-board">

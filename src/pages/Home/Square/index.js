@@ -1,22 +1,29 @@
 import React, { Component } from 'react';
 import { SquareContainer, EmptyComponent, HidenComponent } from './style';
+import { Actions as BoardActions } from '../../../store/ducks/board';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 class Square extends Component {
 
     state = {
         id: this.props.id,
         shown: this.props.shown,
-        component: this.props.component
+        component: this.props.component,
+        position:this.props.position
     }
 
     handleClick = (element, e) => {
-        console.log(element);
-        console.log(e);
-        this.setState({ shown: !this.state.shown });
+        if(!this.state.shown){
+            this.setState({ shown: true });
+            this.props.BoardActions.increaseMoviments();
+        }
+        
+        const elementProps = this.state;
+        this.props.BoardActions.setLastItemSelected(elementProps);
     }
 
     render() {
-
         return (
             <SquareContainer onClick={(e) => this.handleClick(this, e)} identification={this.state.id}>
                 {!this.state.shown ?
@@ -31,4 +38,12 @@ class Square extends Component {
     }
 }
 
-export default Square
+const mapStateToProps = state => ({
+    board: state.board
+});
+
+const mapDispatchToProps = dispatch => ({
+    BoardActions: bindActionCreators(BoardActions, dispatch)
+});
+
+export default connect(mapStateToProps,mapDispatchToProps)(Square);
