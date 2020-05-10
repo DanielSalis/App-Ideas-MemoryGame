@@ -10,22 +10,30 @@ class Square extends Component {
         id: this.props.id,
         shown: this.props.shown,
         component: this.props.component,
-        position:this.props.position
+        position:this.props.position,
+        foundPair:this.props.foundPair
     }
 
-    handleClick = (element, e) => {
-        if(!this.state.shown){
-            this.setState({ shown: true });
-            this.props.BoardActions.increaseMoviments();
-        }
+    // handleClick = async (element, e) => {
+    //     if(!this.state.shown){
+    //         this.setState({ shown: true });
+    //         this.props.BoardActions.increaseMoviments();
+    //         this.props.board.squares[this.state.position].props.shown = true;
+    //     }
+
+    //     if(this.props.board.movimentos % 2 === 0){
+    //         //COMPARAR PARES
+
+    //     }
         
-        const elementProps = this.state;
-        this.props.BoardActions.setLastItemSelected(elementProps);
-    }
+    //     const elementProps = this.state;
+    //     await this.props.BoardActions.setLastItemSelected(elementProps);
+    //     console.log(this.props.board.squares[this.state.position])
+    // }
 
     render() {
         return (
-            <SquareContainer onClick={(e) => this.handleClick(this, e)} identification={this.state.id}>
+            <SquareContainer onClick={this.props.click} identification={this.state.id}>
                 {!this.state.shown ?
                     <EmptyComponent />
                     :

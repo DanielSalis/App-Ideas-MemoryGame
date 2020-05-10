@@ -1,15 +1,23 @@
 export const Types = {
+    SET_SQUARES:'board/SET_SQUARES',
     INCREASE_MOVIMENTS:'board/INCREASE_MOVIMENTS',
     SET_LAST_ITEM_SELECTED:'board/SET_LAST_ITEM_SELECTED'
 }
 
 const INITIAL_STATE = {
-    movimentos: 0,
-    lastItemSelected:{}
+    squares:[],
+    lastItemSelected:{},
+    movimentos: 0
 }
 
 export default function reducer(state=INITIAL_STATE, action){
     switch(action.type){
+        case Types.SET_SQUARES:
+            return{
+                ...state,
+                squares: action.squares
+            }
+
         case Types.INCREASE_MOVIMENTS:
             return{
                 ...state,
@@ -28,6 +36,11 @@ export default function reducer(state=INITIAL_STATE, action){
 }
 
 export const Actions = {
+    setSquares: (listSquares)=>({
+        type:Types.SET_SQUARES,
+        squares: listSquares
+    }),
+
     increaseMoviments: ()=>({
         type:Types.INCREASE_MOVIMENTS
     }),
