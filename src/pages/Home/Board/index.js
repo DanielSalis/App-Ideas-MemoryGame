@@ -5,6 +5,8 @@ import {bindActionCreators} from 'redux';
 import {Actions as BoardActions} from '../../../store/ducks/board';
 import {connect} from 'react-redux';
 
+import {HomeBoard} from '../style';
+
 import {
     FiBookOpen,
     FiAnchor,
@@ -177,7 +179,6 @@ class Board extends Component {
     }
 
     shuffle=(array)=> {
-        debugger;
         for (let i = array.length - 1; i > 0; i--) {
           let j = Math.floor(Math.random() * (i)); // random index from 0 to i
           [array[i], array[j]] = [array[j], array[i]];
@@ -198,7 +199,6 @@ class Board extends Component {
         
         if(this.props.board.movimentos > 1 &&  this.props.board.movimentos % 2 === 0){
                 //COMPARAR PARES
-                debugger
                 if(icons[position].id === this.props.board.lastItemSelected.id){
                     icons[position].foundPair = true;
                     icons[this.props.board.lastItemSelected.position].foundPair = true;
@@ -231,10 +231,10 @@ class Board extends Component {
     render() {
         
         return (
-            <div className="home-board">
-                {this.state.blocked? <div style={{width:'100%',height:'100%',position:'absolute', zIndex:'9', backgroundColor:'transparent'}}>aaaaaa</div>:<></>}
+            <HomeBoard>
+                {this.state.blocked? <div style={{width:'100%',height:'100%',position:'absolute', zIndex:'9', backgroundColor:'transparent'}}></div>:<></>}
                 {this.state.squares ? this.state.squares : <></>}
-            </div>
+            </HomeBoard>
         );
     }
 }

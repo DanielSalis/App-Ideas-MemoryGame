@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from "../../../media";
 
 export const SquareContainer = styled.div`
     margin: 20px 20px;
@@ -9,6 +10,12 @@ export const SquareContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
+    ${media.mobile`
+        width:55px; 
+        height:55px;
+    `}
+    
 `;
 
 export const EmptyComponent = styled.div`
@@ -16,6 +23,10 @@ export const EmptyComponent = styled.div`
     height: 150px;
     border-radius: 8px;
     background-color: #2e3d49;
+    ${media.mobile`
+        width:55px; 
+        height:55px;
+    `}
 `;
 
 export const HidenComponent = styled.div`
@@ -27,4 +38,9 @@ export const HidenComponent = styled.div`
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
+
+    ${media.mobile`
+        width:55px; 
+        height:55px;
+    `}
 `;
