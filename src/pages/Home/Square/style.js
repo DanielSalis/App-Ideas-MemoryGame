@@ -1,5 +1,8 @@
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import media from "../../../media";
+import { flipInY } from 'react-animations';
+
+const animation = keyframes`${flipInY}`;
 
 export const SquareContainer = styled.div`
     margin: 20px 20px;
@@ -38,6 +41,8 @@ export const HidenComponent = styled.div`
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
+    animation: 0.6s ${props=> !props.foundPair? animation: ''};
+    
 
     ${media.mobile`
         width:55px; 

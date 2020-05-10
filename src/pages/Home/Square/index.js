@@ -37,7 +37,7 @@ class Square extends Component {
                 {!this.state.shown ?
                     <EmptyComponent />
                     :
-                    <HidenComponent>
+                    <HidenComponent foundPair={this.state.foundPair}>
                         {this.state.component}
                     </HidenComponent>
                 }

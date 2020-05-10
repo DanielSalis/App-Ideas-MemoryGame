@@ -215,7 +215,7 @@ class Board extends Component {
                         await this.props.BoardActions.setLastItemSelected(icons[position]);
                         await this.generateSquares(true,false);
                         await this.setState({blocked:false});
-                    },550);
+                    },700);
 
                     return;
                 }
