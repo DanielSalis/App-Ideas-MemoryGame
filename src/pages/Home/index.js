@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Board from './Board';
+import TempoEsgotado from './Tempo'
 
 import { Actions as BoardActions } from '../../store/ducks/board';
 import { bindActionCreators } from 'redux';
@@ -10,7 +11,7 @@ import './style.css';
 
 class Home extends Component {
     state = {
-        minutes: 5,
+        minutes: 3,
         seconds: 0,
     }
 
@@ -49,17 +50,20 @@ class Home extends Component {
         return (
             <div className="home-container">
                 {minutes === 0 && seconds === 0 ?
-                    <></>
-                    :
                     <>
-                        <Header
-                            minutes={minutes}
-                            seconds={seconds}
-                            movimentos={movimentos}
-                        />
-                        <Board movimentos={movimentos} />
+                        <TempoEsgotado />
                     </>
+                    :
+                    null
                 }
+                <>
+                    <Header
+                        minutes={minutes}
+                        seconds={seconds}
+                        movimentos={movimentos}
+                    />
+                    <Board movimentos={movimentos} />
+                </>
             </div>
         );
     }

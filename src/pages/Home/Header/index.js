@@ -14,11 +14,11 @@ class Header extends Component {
                 <p>Jogo da Memória</p>
                 <div className="home-header-info">
                     {minutes === 0 && seconds === 0
-                        ? <label>Tempo!</label>
+                        ? <label>00:00</label>
                         : <label>{minutes}:{seconds < 10 ? `0${seconds}` : seconds}</label>
                     }
                     <label>Movimentos {movimentos}</label>
-                    <label title="Reiniciar" ><FiRotateCw onClick={()=>{this.props.BoardActions.restartGame(true)}}/></label>
+                    <label title="Reiniciar" ><FiRotateCw onClick={()=>{window.location.reload()}}/></label>
                 </div>
             </>
         )
