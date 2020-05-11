@@ -26,6 +26,7 @@ export const EmptyComponent = styled.div`
     height: 150px;
     border-radius: 8px;
     background-color: #2e3d49;
+    
     ${media.mobile`
         width:55px; 
         height:55px;

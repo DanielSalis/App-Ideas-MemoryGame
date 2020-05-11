@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { FiCornerUpLeft } from 'react-icons/fi';
+import { FiRotateCw } from 'react-icons/fi';
+import {bindActionCreators} from 'redux';
+import {Actions as BoardActions} from '../../../store/ducks/board';
+import {connect} from 'react-redux';
 
 class Header extends Component {
 
@@ -15,11 +18,16 @@ class Header extends Component {
                         : <label>{minutes}:{seconds < 10 ? `0${seconds}` : seconds}</label>
                     }
                     <label>Movimentos {movimentos}</label>
-                    <label><FiCornerUpLeft /></label>
+                    <label title="Reiniciar" ><FiRotateCw onClick={()=>{this.props.BoardActions.restartGame(true)}}/></label>
                 </div>
             </>
         )
     }
 }
 
-export default Header;
+
+const mapDispatchToProps = dispatch =>({
+    BoardActions: bindActionCreators(BoardActions, dispatch)
+})
+
+export default connect(null, mapDispatchToProps)(Header);
