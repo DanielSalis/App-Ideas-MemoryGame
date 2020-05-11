@@ -123,23 +123,6 @@ class Board extends Component {
         blocked:false
     }
 
-    handleClick = async (element, e) => {
-        if(!this.state.shown){
-            this.setState({ shown: true });
-            this.props.BoardActions.increaseMoviments();
-            this.props.board.squares[this.state.position].props.shown = true;
-        }
-
-        if(this.props.board.movimentos % 2 === 0){
-            //COMPARAR PARES
-
-        }
-        
-        const elementProps = this.state;
-        await this.props.BoardActions.setLastItemSelected(elementProps);
-        console.log(this.props.board.squares[this.state.position])
-    }
-
     componentDidMount = async () => {
         this.generateSquares(false ,true);
     }
@@ -184,7 +167,6 @@ class Board extends Component {
           [array[i], array[j]] = [array[j], array[i]];
         }
       }
-
     
     handleClick = async (position, e) => {
         if(icons[position].foundPair){
@@ -205,6 +187,8 @@ class Board extends Component {
                     
                     icons[position].shown = true;
                     icons[this.props.board.lastItemSelected.position].shown = true;
+
+                    this.props.BoardActions.increasePairs();
                 }else{
                     await this.generateSquares(true);
                     icons[position].shown = false;

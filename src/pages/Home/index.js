@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import ReactPlayer from 'react-player'
 import Header from './Header';
 import Board from './Board';
-import TempoEsgotado from './Tempo'
+import TempoEsgotado from './Tempo';
+import Parabens from './Parabens';
 
 import { Actions as BoardActions } from '../../store/ducks/board';
 import { bindActionCreators } from 'redux';
@@ -14,7 +16,6 @@ class Home extends Component {
         minutes: 1,
         seconds: 10,
     }
-
 
     componentDidMount() {
         this.generateInterval();
@@ -42,28 +43,43 @@ class Home extends Component {
         }, 1000)
     }
 
-
-    render() {
+    generateGameControler = ()=>{
         const { minutes, seconds } = this.state;
         const {movimentos} = this.props.board
 
+        if(this.props.board.foundedPairs){
+            return(
+                <>
+                <Parabens movimentos={movimentos}/>
+                <ReactPlayer url='https://youtu.be/cR2XilcGYOo?t=24' playing forceAudio/>
+                </>
+            );
+        }
+
+        if(minutes === 0 && seconds === 0){
+           return(
+                <TempoEsgotado />
+           );
+        }
+
+        return(
+            <>
+                <Header
+                    minutes={minutes}
+                    seconds={seconds}
+                    movimentos={movimentos}
+                />
+                <Board movimentos={movimentos} />
+            </>
+        );
+    }
+
+    render() {
+
+
         return (
             <div className="home-container">
-                {minutes === 0 && seconds === 0 ?
-                    <>
-                        <TempoEsgotado />
-                    </>
-                    :
-                    null
-                }
-                <>
-                    <Header
-                        minutes={minutes}
-                        seconds={seconds}
-                        movimentos={movimentos}
-                    />
-                    <Board movimentos={movimentos} />
-                </>
+                {this.generateGameControler()}
             </div>
         );
     }
