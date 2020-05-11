@@ -11,8 +11,8 @@ import './style.css';
 
 class Home extends Component {
     state = {
-        minutes: 3,
-        seconds: 0,
+        minutes: 1,
+        seconds: 10,
     }
 
 
