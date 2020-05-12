@@ -16,6 +16,22 @@ export const HomeBoard = styled.div`
     justify-content: space-evenly;
 
     ${media.mobile` width: 20rem;`};
-    ${media.mobile` height: auto;`}
+    ${media.mobile` max-height: 33rem;`}
 
+`;
+
+
+export const MainTitle = styled.div`
+    width: 100%;
+    font-family: 'Bungee Shade', cursive;
+    font-size: 3rem;
+    background: linear-gradient(-45deg,#23ACD5,rgb(16, 251, 173),#23ACD5, rgb(16, 251, 173));
+    background-size: 770% 880%;
+    animation: change 1s ease-in-out infinite;
+    margin-bottom: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+    text-align: center;
+
+    ${media.mobile` font-size: 1.2rem;`};
 `;

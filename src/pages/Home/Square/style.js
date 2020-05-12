@@ -15,8 +15,8 @@ export const SquareContainer = styled.div`
     justify-content: center;
 
     ${media.mobile`
-        width:55px; 
-        height:55px;
+        width:48px; 
+        height:48px;
     `}
     
 `;
@@ -28,8 +28,8 @@ export const EmptyComponent = styled.div`
     background-color: #2e3d49;
     
     ${media.mobile`
-        width:55px; 
-        height:55px;
+        width:48px; 
+        height:48px;
     `}
 `;
 
@@ -46,7 +46,7 @@ export const HidenComponent = styled.div`
     
 
     ${media.mobile`
-        width:55px; 
-        height:55px;
+        width:48px; 
+        height:48px;
     `}
 `;

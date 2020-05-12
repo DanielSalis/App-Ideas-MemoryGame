@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {MainTitle} from '../style';
 import { FiRotateCw } from 'react-icons/fi';
 import {bindActionCreators} from 'redux';
 import {Actions as BoardActions} from '../../../store/ducks/board';
@@ -11,7 +12,7 @@ class Header extends Component {
 
         return (
             <>
-                <p>Jogo da Memória</p>
+                <MainTitle>Jogo de Memória</MainTitle>
                 <div className="home-header-info">
                     {minutes === 0 && seconds === 0
                         ? <label>00:00</label>

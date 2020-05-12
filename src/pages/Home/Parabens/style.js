@@ -34,7 +34,7 @@ export const SumaryContainer = styled.div`
     h2{
         font-size:12rem;
         margin:20px 0px;
-        ${media.mobile` font-size: 4rem;`};
+        ${media.mobile` font-size: 3.2rem;`};
 
     }
 `;
