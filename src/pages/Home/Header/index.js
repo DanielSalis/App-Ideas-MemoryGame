@@ -18,7 +18,7 @@ class Header extends Component {
                         ? <label>00:00</label>
                         : <label>{minutes}:{seconds < 10 ? `0${seconds}` : seconds}</label>
                     }
-                    <label>Movimentos {movimentos}</label>
+                    <label className='Movimentos' >Movimentos {movimentos}</label>
                     <label title="Reiniciar" ><FiRotateCw onClick={()=>{window.location.reload()}}/></label>
                 </div>
             </>

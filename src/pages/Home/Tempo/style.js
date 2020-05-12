@@ -16,9 +16,11 @@ export const Container= styled.div`
 `;
 
 export const WarningContainer = styled.div`
+    font-family: 'Bungee Shade', cursive;
+    color: #fff;
     width:100%;
     min-height: 200px;
-    background-color:#fff;
+    background-color:#363636;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -26,6 +28,7 @@ export const WarningContainer = styled.div`
     animation: 1s ${tadaAnimation};
 
     h2{
-        margin:20px 0px
+        font-family: 'Bungee Shade', cursive;
+        margin:20px 0px;
     }
 `;

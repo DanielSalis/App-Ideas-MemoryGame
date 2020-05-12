@@ -46,7 +46,7 @@ class Home extends Component {
         const { minutes, seconds } = this.state;
         const {movimentos} = this.props.board
 
-        if(this.props.board.foundedPairs === 1){
+        if(this.props.board.foundedPairs === 8){
             return(
                 <>
                     <Parabens movimentos={movimentos}/>
