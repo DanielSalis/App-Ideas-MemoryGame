@@ -35,3 +35,25 @@ export const MainTitle = styled.div`
 
     ${media.mobile` font-size: 1.2rem;`};
 `;
+
+export const MainHeader = styled.div`
+    margin: 5px 0px;
+    min-width: 30%;
+    max-width: 50%;
+    min-height: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #363636;
+    border-radius: 8px;
+
+    label{
+        color: #fff;
+        font-family: 'Bungee Shade', cursive;
+        font-size: 1rem;
+        margin: 0 5px;
+    }
+
+    ${media.mobile` max-width: 95%;`};
+    ${media.mobile` min-width: 89%;`};
+`;
