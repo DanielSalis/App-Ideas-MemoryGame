@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactPlayer from 'react-player'
 import Header from './Header';
 import Board from './Board';
 import TempoEsgotado from './Tempo';
@@ -47,11 +46,10 @@ class Home extends Component {
         const { minutes, seconds } = this.state;
         const {movimentos} = this.props.board
 
-        if(this.props.board.foundedPairs === 8){
+        if(this.props.board.foundedPairs === 1){
             return(
                 <>
-                <Parabens movimentos={movimentos}/>
-                <ReactPlayer url='https://youtu.be/cR2XilcGYOo?t=24' playing forceAudio/>
+                    <Parabens movimentos={movimentos}/>
                 </>
             );
         }

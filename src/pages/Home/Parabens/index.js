@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
+import ReactPlayer from 'react-player';
 import {Container, SumaryContainer} from './style';
-
-
 
 class Parabens extends Component{
     render(){
@@ -11,6 +10,7 @@ class Parabens extends Component{
                     <h2>Parabéns !!!</h2>
                     <h3>Você concluiu em: {this.props.movimentos} movimentos</h3>
                 </SumaryContainer>
+                <ReactPlayer style={{display:'none'}} volume={0.3} url='https://youtu.be/cR2XilcGYOo?t=24' playing forceAudio/>
             </Container>
         );
     }

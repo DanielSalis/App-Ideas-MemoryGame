@@ -1,4 +1,5 @@
 import styled, {keyframes} from 'styled-components';
+import media from '../../../media';
 import { tada } from 'react-animations';
 
 const tadaAnimation = keyframes`${tada}`;
@@ -15,6 +16,7 @@ export const Container= styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
+    overflow-x:hidden;
 `;
 
 export const SumaryContainer = styled.div`
@@ -28,8 +30,11 @@ export const SumaryContainer = styled.div`
     animation: ${tadaAnimation};
     color: #FFF;
 
+
     h2{
-        font-size:10rem;
+        font-size:12rem;
         margin:20px 0px;
+        ${media.mobile` font-size: 4rem;`};
+
     }
 `;
