@@ -32,9 +32,10 @@ export const SumaryContainer = styled.div`
 
 
     h2{
-        font-size:12rem;
+        font-family: 'Bungee Shade', cursive;
+        font-size:5.5rem;
         margin:20px 0px;
-        ${media.mobile` font-size: 3.2rem;`};
+        ${media.mobile` font-size: 2.2rem;`};
 
     }
 `;

@@ -12,7 +12,7 @@ class Header extends Component {
 
         return (
             <>
-                <MainTitle>Jogo de Memória</MainTitle>
+                <MainTitle>Jogo da Memória</MainTitle>
                 <div className="home-header-info">
                     {minutes === 0 && seconds === 0
                         ? <label>00:00</label>

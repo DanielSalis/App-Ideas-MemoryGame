@@ -13,7 +13,7 @@ import './style.css';
 class Home extends Component {
     state = {
         minutes: 1,
-        seconds: 10,
+        seconds: 30,
     }
 
     componentDidMount() {

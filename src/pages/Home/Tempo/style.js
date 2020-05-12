@@ -16,7 +16,6 @@ export const Container= styled.div`
 `;
 
 export const WarningContainer = styled.div`
-    font-family: 'Bungee Shade', cursive;
     color: #fff;
     width:100%;
     min-height: 200px;

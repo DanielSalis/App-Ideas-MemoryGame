@@ -8,22 +8,29 @@
 }
 
 .home-header-info{
+
     margin: 5px 0px;
-    min-width: 20%;
+    min-width: 30%;
+    max-width: 50%;
     min-height: 3%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: #363636;
+    border-radius: 8px;
 }
 
 .home-header-info label{
+    color: #fff;
+    font-family: 'Bungee Shade', cursive;
+    font-size: 1rem;
     margin: 0 5px;
 }
 
 .Movimentos {
     font-family: 'Bungee Shade', cursive;
     font-size: 1rem;
-    color: #23ACD5;
+    color: #000;
 }
 
 .square{
