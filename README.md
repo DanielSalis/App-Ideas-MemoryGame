@@ -7,3 +7,4 @@ Simple app using react and redux.
 - `npm run dev`
 
 ## App demo
+[Video](https://github.com/DanielSalis/App-Ideas-MemoryGame/blob/master/assets/app-demo.webm)
